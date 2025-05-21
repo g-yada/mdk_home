@@ -49,7 +49,7 @@ class DesktopNav extends StatelessWidget {
                 onTap: () {
                   context.go('/');
                   WidgetsBinding.instance.addPostFrameCallback((_) {
-                    final targetContext = ScrollService.coreKey.currentContext;
+                    final targetContext = ScrollService.heroKey.currentContext;
                     if (targetContext != null) {
                       Scrollable.ensureVisible(
                         targetContext,
@@ -58,7 +58,7 @@ class DesktopNav extends StatelessWidget {
                       );
                     } else {
                       print(
-                        "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                        "ScrollService.heroKey.currentContext is null after navigation and post frame callback.",
                       );
                     }
                   });
@@ -399,7 +399,7 @@ class MobileNav extends StatelessWidget {
         onTap: () {
           context.go('/');
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            final targetContext = ScrollService.coreKey.currentContext;
+            final targetContext = ScrollService.heroKey.currentContext;
             if (targetContext != null) {
               Scrollable.ensureVisible(
                 targetContext,
@@ -408,7 +408,7 @@ class MobileNav extends StatelessWidget {
               );
             } else {
               print(
-                "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                "ScrollService.heroKey.currentContext is null after navigation and post frame callback.",
               );
             }
           });
@@ -499,7 +499,7 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               context.go('/');
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                final targetContext = ScrollService.coreKey.currentContext;
+                final targetContext = ScrollService.heroKey.currentContext;
                 if (targetContext != null) {
                   Scrollable.ensureVisible(
                     targetContext,
@@ -508,7 +508,7 @@ class MobileDrawer extends StatelessWidget {
                   );
                 } else {
                   print(
-                    "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                    "ScrollService.heroKey.currentContext is null after navigation and post frame callback.",
                   );
                 }
               });
