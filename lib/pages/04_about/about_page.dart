@@ -13,6 +13,7 @@ class AboutPage extends StatelessWidget {
         const SectionTitle(sectionTitle: '회사소개', selectedSub: '회사개요'),
         Introduce(),
         History(),
+        Partners(),
         Footer(),
       ],
     );

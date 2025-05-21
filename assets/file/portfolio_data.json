@@ -1,0 +1,35 @@
+[
+    {
+      "id": "project_001",
+      "images": [
+        "assets/images/project_001/main.jpg",
+        "assets/images/project_001/sub_01.jpg",
+        "assets/images/project_001/sub_02.jpg"
+      ],
+      "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
+      "year": 2024,
+      "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
+    },
+    {
+      "id": "project_002",
+      "images": [
+        "assets/images/project_001/main.jpg",
+        "assets/images/project_001/sub_01.jpg",
+        "assets/images/project_001/sub_02.jpg"
+      ],
+      "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
+      "year": 2025,
+      "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
+    },
+    {
+        "id": "project_003",
+        "images": [
+          "assets/images/project_001/main.jpg",
+          "assets/images/project_001/sub_01.jpg",
+          "assets/images/project_001/sub_02.jpg"
+        ],
+        "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
+        "year": 2025,
+        "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
+      }
+  ]

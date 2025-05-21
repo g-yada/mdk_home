@@ -4,13 +4,19 @@ import 'package:go_router/go_router.dart';
 class RedButton extends StatelessWidget {
   final String buttonName;
   final String path;
+  final VoidCallback? onTap;
 
-  const RedButton({required this.buttonName, required this.path, super.key});
+  const RedButton({
+    required this.buttonName,
+    required this.path,
+    this.onTap,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => context.go(path),
+      onPressed: onTap ?? () => context.go(path),
       style: ButtonStyle(
         padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
