@@ -95,7 +95,6 @@ class _MapWidgetState extends State<MapWidget> {
   Widget _buildDesktop(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 100),
-      color: Colors.white,
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 800),
@@ -109,7 +108,6 @@ class _MapWidgetState extends State<MapWidget> {
   Widget _buildTablet(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
-      color: Colors.white,
       height: 500,
       child: _buildMap(),
     );
@@ -118,7 +116,6 @@ class _MapWidgetState extends State<MapWidget> {
   Widget _buildMobile(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(30, 30, 30, 20),
-      color: Colors.white,
       height: 450,
       child: _buildMap(),
     );

@@ -67,7 +67,6 @@ class _PortfolioItemsState extends State<PortfolioItems> {
   Widget _buildDesktop(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 100),
-      color: Colors.white,
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 1200),
@@ -87,7 +86,6 @@ class _PortfolioItemsState extends State<PortfolioItems> {
   Widget _buildTablet(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
-      color: Colors.white,
       child: Column(
         children: [
           const SizedBox(height: 20),
@@ -102,7 +100,6 @@ class _PortfolioItemsState extends State<PortfolioItems> {
   Widget _buildMobile(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-      color: Colors.white,
       child: Column(
         children: [
           const SizedBox(height: 10),

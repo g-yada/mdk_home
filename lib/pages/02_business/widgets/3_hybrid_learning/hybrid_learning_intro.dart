@@ -78,7 +78,6 @@ class HybridLearningIntro extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       width: double.infinity,
-      decoration: BoxDecoration(color: Colors.white),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
