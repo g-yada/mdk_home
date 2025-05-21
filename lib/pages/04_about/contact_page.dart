@@ -10,7 +10,8 @@ class ContactPage extends StatelessWidget {
     return AppLayout(
       children: [
         const SectionTitle(sectionTitle: '회사소개', selectedSub: '오시는길'),
-
+        MapWidget(),
+        Info(),
         const Footer(),
       ],
     );

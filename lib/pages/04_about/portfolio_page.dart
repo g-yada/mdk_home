@@ -11,7 +11,7 @@ class PortfolioPage extends StatelessWidget {
       children: [
         const SectionTitle(sectionTitle: '회사소개', selectedSub: '포트폴리오'),
         const PortfolioItems(),
-        Footer(),
+        const Footer(),
       ],
     );
   }

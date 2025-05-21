@@ -134,6 +134,7 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                   backgroundColor: Colors.grey[200],
                   selectedColor: PRIMARY_COLOR.withOpacity(0.2),
                   labelStyle: TextStyle(
+                    fontFamily: 'Paperlogy',
                     color: isSelected ? PRIMARY_COLOR : Colors.black87,
                     fontWeight:
                         isSelected ? FontWeight.bold : FontWeight.normal,
@@ -199,7 +200,11 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                 children: [
                   Text(
                     item['year'].toString(),
-                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey[600],
+                      fontFamily: 'Paperlogy',
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -207,6 +212,7 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Paperlogy',
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -302,12 +308,17 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Paperlogy',
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   item['year'].toString(),
-                  style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey[600],
+                    fontFamily: 'Paperlogy',
+                  ),
                 ),
               ],
             ),
@@ -333,7 +344,11 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                 padding: const EdgeInsets.all(20),
                 child: Text(
                   item['description'],
-                  style: const TextStyle(fontSize: 16, height: 1.6),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                    fontFamily: 'Paperlogy',
+                  ),
                 ),
               ),
           ],
