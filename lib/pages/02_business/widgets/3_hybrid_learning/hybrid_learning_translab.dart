@@ -46,7 +46,7 @@ class HybridLearningTranslab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '코딩(CODING) 강의실',
+                  '디지털 트랜스 랩',
                   style: TextStyle(
                     fontSize: 32,
                     fontFamily: 'Paperlogy',
@@ -120,7 +120,7 @@ class HybridLearningTranslab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '코딩(CODING) 강의실',
+                '디지털 트랜스 랩',
                 style: TextStyle(
                   fontSize: 28,
                   fontFamily: 'Paperlogy',
@@ -193,7 +193,7 @@ class HybridLearningTranslab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '코딩(CODING) 강의실',
+                '디지털 트랜스 랩',
                 style: TextStyle(
                   fontSize: 24,
                   fontFamily: 'Paperlogy',

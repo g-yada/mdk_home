@@ -48,16 +48,30 @@ class DesktopNav extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   context.go('/');
-                  Future.delayed(const Duration(milliseconds: 300), () {
-                    final targetContext = ScrollService.heroKey.currentContext;
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    final targetContext = ScrollService.coreKey.currentContext;
                     if (targetContext != null) {
                       Scrollable.ensureVisible(
                         targetContext,
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
+                    } else {
+                      print(
+                        "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                      );
                     }
                   });
+                  // Future.delayed(const Duration(milliseconds: 300), () {
+                  //   final targetContext = ScrollService.heroKey.currentContext;
+                  //   if (targetContext != null) {
+                  //     Scrollable.ensureVisible(
+                  //       targetContext,
+                  //       duration: const Duration(milliseconds: 300),
+                  //       curve: Curves.easeInOut,
+                  //     );
+                  //   }
+                  // });
                 },
                 child: Image.asset('assets/img/logo.png', width: 120),
               ),
@@ -68,7 +82,7 @@ class DesktopNav extends StatelessWidget {
                   label: '핵심역량',
                   onTap: () {
                     context.go('/');
-                    Future.delayed(const Duration(milliseconds: 300), () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
                       final targetContext =
                           ScrollService.coreKey.currentContext;
                       if (targetContext != null) {
@@ -77,8 +91,23 @@ class DesktopNav extends StatelessWidget {
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
+                      } else {
+                        print(
+                          "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                        );
                       }
                     });
+                    // Future.delayed(const Duration(milliseconds: 300), () {
+                    //   final targetContext =
+                    //       ScrollService.coreKey.currentContext;
+                    //   if (targetContext != null) {
+                    //     Scrollable.ensureVisible(
+                    //       targetContext,
+                    //       duration: const Duration(milliseconds: 300),
+                    //       curve: Curves.easeInOut,
+                    //     );
+                    //   }
+                    // });
                   },
                 ),
                 const SizedBox(width: 38),
@@ -86,7 +115,7 @@ class DesktopNav extends StatelessWidget {
                   label: '사업분야',
                   onTap: () {
                     context.go('/business/studio');
-                    Future.delayed(const Duration(milliseconds: 300), () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
                       final targetContext =
                           ScrollService.coreKey.currentContext;
                       if (targetContext != null) {
@@ -95,8 +124,24 @@ class DesktopNav extends StatelessWidget {
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
+                      } else {
+                        print(
+                          "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                        );
                       }
                     });
+
+                    // Future.delayed(const Duration(milliseconds: 300), () {
+                    //   final targetContext =
+                    //       ScrollService.coreKey.currentContext;
+                    //   if (targetContext != null) {
+                    //     Scrollable.ensureVisible(
+                    //       targetContext,
+                    //       duration: const Duration(milliseconds: 300),
+                    //       curve: Curves.easeInOut,
+                    //     );
+                    //   }
+                    // });
                   },
                   items: [
                     NavMenuItem(label: '스튜디오', path: '/business/studio'),
@@ -111,7 +156,7 @@ class DesktopNav extends StatelessWidget {
                   label: '회사소개',
                   onTap: () {
                     context.go('/about');
-                    Future.delayed(const Duration(milliseconds: 300), () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
                       final targetContext =
                           ScrollService.coreKey.currentContext;
                       if (targetContext != null) {
@@ -120,8 +165,23 @@ class DesktopNav extends StatelessWidget {
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut,
                         );
+                      } else {
+                        print(
+                          "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                        );
                       }
                     });
+                    // Future.delayed(const Duration(milliseconds: 300), () {
+                    //   final targetContext =
+                    //       ScrollService.coreKey.currentContext;
+                    //   if (targetContext != null) {
+                    //     Scrollable.ensureVisible(
+                    //       targetContext,
+                    //       duration: const Duration(milliseconds: 300),
+                    //       curve: Curves.easeInOut,
+                    //     );
+                    //   }
+                    // });
                   },
                   items: [
                     NavMenuItem(label: '회사개요', path: '/about'),
@@ -338,17 +398,31 @@ class MobileNav extends StatelessWidget {
       leading: GestureDetector(
         onTap: () {
           context.go('/');
-
-          Future.delayed(const Duration(milliseconds: 300), () {
-            final targetContext = ScrollService.heroKey.currentContext;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            final targetContext = ScrollService.coreKey.currentContext;
             if (targetContext != null) {
               Scrollable.ensureVisible(
                 targetContext,
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeInOut,
               );
+            } else {
+              print(
+                "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+              );
             }
           });
+
+          // Future.delayed(const Duration(milliseconds: 300), () {
+          //   final targetContext = ScrollService.heroKey.currentContext;
+          //   if (targetContext != null) {
+          //     Scrollable.ensureVisible(
+          //       targetContext,
+          //       duration: const Duration(milliseconds: 300),
+          //       curve: Curves.easeInOut,
+          //     );
+          //   }
+          // });
         }, // 로고 누르면 홈으로 이동
         child: Row(
           children: [
@@ -424,17 +498,31 @@ class MobileDrawer extends StatelessWidget {
             ),
             onTap: () {
               context.go('/');
-
-              Future.delayed(const Duration(milliseconds: 300), () {
-                final targetContext = ScrollService.heroKey.currentContext;
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                final targetContext = ScrollService.coreKey.currentContext;
                 if (targetContext != null) {
                   Scrollable.ensureVisible(
                     targetContext,
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
+                } else {
+                  print(
+                    "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                  );
                 }
               });
+
+              // Future.delayed(const Duration(milliseconds: 300), () {
+              //   final targetContext = ScrollService.heroKey.currentContext;
+              //   if (targetContext != null) {
+              //     Scrollable.ensureVisible(
+              //       targetContext,
+              //       duration: const Duration(milliseconds: 300),
+              //       curve: Curves.easeInOut,
+              //     );
+              //   }
+              // });
               Navigator.pop(context);
             },
           ),
@@ -450,19 +538,33 @@ class MobileDrawer extends StatelessWidget {
             ),
             onTap: () {
               context.go('/');
-
-              Future.delayed(const Duration(milliseconds: 300), () {
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  final targetContext = ScrollService.coreKey.currentContext;
-                  if (targetContext != null) {
-                    Scrollable.ensureVisible(
-                      targetContext,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  }
-                });
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                final targetContext = ScrollService.coreKey.currentContext;
+                if (targetContext != null) {
+                  Scrollable.ensureVisible(
+                    targetContext,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                } else {
+                  print(
+                    "ScrollService.coreKey.currentContext is null after navigation and post frame callback.",
+                  );
+                }
               });
+
+              // Future.delayed(const Duration(milliseconds: 300), () {
+              //   WidgetsBinding.instance.addPostFrameCallback((_) {
+              //     final targetContext = ScrollService.coreKey.currentContext;
+              //     if (targetContext != null) {
+              //       Scrollable.ensureVisible(
+              //         targetContext,
+              //         duration: const Duration(milliseconds: 300),
+              //         curve: Curves.easeInOut,
+              //       );
+              //     }
+              //   });
+              // });
               Navigator.pop(context);
             },
           ),
