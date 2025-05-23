@@ -25,25 +25,25 @@ class StudioEach extends StatelessWidget {
             _StudioItem(
               title: '1인 스튜디오',
               content: '최소한의 오퍼레이팅만으로 강의를 진행하고 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_one.webp',
+              imgPath: 'img/business/studio_one.webp',
               isDesktop: true,
             ),
             _StudioItem(
               title: '블랙 스튜디오',
               content: '무게감 있는 블랙 배경을 통해, 자막을 강조하고 집중도 있는 교육 콘텐츠 제작에 유용한 스튜디오',
-              imgPath: 'assets/img/studio_black.webp',
+              imgPath: 'img/business/studio_black.webp',
               isDesktop: true,
             ),
             _StudioItem(
               title: '화이트 스튜디오',
               content: '피사체에 균일한 광량을 제공, 강의자에게 초점을 맞춘 고품질 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_white.webp',
+              imgPath: 'img/business/studio_white.webp',
               isDesktop: true,
             ),
             _StudioItem(
               title: '크로마키 스튜디오',
               content: '가상 배경 합성을 통해 다채로운 교육 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_chroma.webp',
+              imgPath: 'img/business/studio_chroma.webp',
               isDesktop: true,
             ),
             SizedBox(height: 25),
@@ -64,25 +64,25 @@ class StudioEach extends StatelessWidget {
             _StudioItem(
               title: '1인 스튜디오',
               content: '최소한의 오퍼레이팅만으로 강의를 진행하고 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_one.webp',
+              imgPath: 'img/studio_one.webp',
               isTablet: true,
             ),
             _StudioItem(
               title: '블랙 스튜디오',
               content: '무게감 있는 블랙 배경을 통해, 자막을 강조하고 집중도 있는 교육 콘텐츠 제작에 유용한 스튜디오',
-              imgPath: 'assets/img/studio_black.webp',
+              imgPath: 'img/business/studio_black.webp',
               isTablet: true,
             ),
             _StudioItem(
               title: '화이트 스튜디오',
               content: '피사체에 균일한 광량을 제공, 강의자에게 초점을 맞춘 고품질 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_white.webp',
+              imgPath: 'img/business/studio_white.webp',
               isTablet: true,
             ),
             _StudioItem(
               title: '크로마키 스튜디오',
               content: '가상 배경 합성을 통해 다채로운 교육 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_chroma.webp',
+              imgPath: 'img/business/studio_chroma.webp',
               isTablet: true,
             ),
             SizedBox(height: 25),
@@ -103,25 +103,25 @@ class StudioEach extends StatelessWidget {
             _StudioItem(
               title: '1인 스튜디오',
               content: '최소한의 오퍼레이팅만으로 강의를 진행하고 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_one.webp',
+              imgPath: 'img/business/studio_one.webp',
               isMobile: true,
             ),
             _StudioItem(
               title: '블랙 스튜디오',
               content: '무게감 있는 블랙 배경을 통해, 자막을 강조하고 집중도 있는 교육 콘텐츠 제작에 유용한 스튜디오',
-              imgPath: 'assets/img/studio_black.webp',
+              imgPath: 'img/business/studio_black.webp',
               isMobile: true,
             ),
             _StudioItem(
               title: '화이트 스튜디오',
               content: '피사체에 균일한 광량을 제공, 강의자에게 초점을 맞춘 고품질 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_white.webp',
+              imgPath: 'img/business/studio_white.webp',
               isMobile: true,
             ),
             _StudioItem(
               title: '크로마키 스튜디오',
               content: '가상 배경 합성을 통해 다채로운 교육 콘텐츠를 제작할 수 있는 스튜디오',
-              imgPath: 'assets/img/studio_chroma.webp',
+              imgPath: 'img/business/studio_chroma.webp',
               isMobile: true,
             ),
             SizedBox(height: 25),
@@ -152,6 +152,8 @@ class _StudioItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final BorderRadius imageBorderRadius = BorderRadius.circular(12.0);
+
     if (isMobile) {
       return Container(
         width: double.infinity,
@@ -159,7 +161,14 @@ class _StudioItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(imgPath, width: double.infinity, fit: BoxFit.cover),
+            ClipRRect(
+              borderRadius: imageBorderRadius,
+              child: Image.asset(
+                imgPath,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
             SizedBox(height: 16),
             Text(
               title,
@@ -188,6 +197,7 @@ class _StudioItem extends StatelessWidget {
       );
     }
 
+    // Tablet & Desktop
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(
@@ -198,7 +208,10 @@ class _StudioItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(imgPath, width: isTablet ? 350 : 450),
+          ClipRRect(
+            borderRadius: imageBorderRadius,
+            child: Image.asset(imgPath, width: isTablet ? 350 : 450),
+          ),
           SizedBox(width: isTablet ? 24 : 30),
           Expanded(
             child: Column(

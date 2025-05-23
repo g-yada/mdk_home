@@ -14,6 +14,7 @@ class AboutPage extends StatelessWidget {
         Introduce(),
         History(),
         Partners(),
+        SizedBox(height: 20),
         Footer(),
       ],
     );

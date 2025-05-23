@@ -34,7 +34,7 @@ class SmartClassCoding extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('assets/img/coding.webp'),
+                  image: AssetImage('img/business/coding.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class SmartClassCoding extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/coding.webp'),
+                image: AssetImage('img/business/coding.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class SmartClassCoding extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/coding.webp'),
+                image: AssetImage('img/business/coding.webp'),
                 fit: BoxFit.cover,
               ),
             ),

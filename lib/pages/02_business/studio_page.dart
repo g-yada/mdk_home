@@ -13,6 +13,7 @@ class StudioPage extends StatelessWidget {
         StudioIntro(),
         StudioConvergence(),
         StudioEach(),
+        SizedBox(height: 30),
         Footer(),
       ],
     );

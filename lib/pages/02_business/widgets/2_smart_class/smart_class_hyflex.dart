@@ -34,7 +34,7 @@ class SmartClassHyflex extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('assets/img/hyflex.webp'),
+                  image: AssetImage('img/business/hyflex.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class SmartClassHyflex extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/hyflex.webp'),
+                image: AssetImage('img/business/hyflex.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class SmartClassHyflex extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/hyflex.webp'),
+                image: AssetImage('img/business/hyflex.webp'),
                 fit: BoxFit.cover,
               ),
             ),

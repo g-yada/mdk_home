@@ -1,35 +1,30 @@
-[
-    {
-      "id": "project_001",
-      "images": [
-        "assets/images/project_001/main.jpg",
-        "assets/images/project_001/sub_01.jpg",
-        "assets/images/project_001/sub_02.jpg"
-      ],
-      "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
-      "year": 2024,
-      "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
-    },
-    {
-      "id": "project_002",
-      "images": [
-        "assets/images/project_001/main.jpg",
-        "assets/images/project_001/sub_01.jpg",
-        "assets/images/project_001/sub_02.jpg"
-      ],
-      "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
-      "year": 2025,
-      "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
-    },
-    {
-        "id": "project_003",
-        "images": [
-          "assets/images/project_001/main.jpg",
-          "assets/images/project_001/sub_01.jpg",
-          "assets/images/project_001/sub_02.jpg"
-        ],
-        "projectName": "OO대학교 첨단 스마트 강의실 구축 사업",
-        "year": 2025,
-        "description": "NDI 네트워크 영상기술을 활용한 차세대 교육 공간 구축 사례입니다. 실시간 양방향 수업 및 고품질 콘텐츠 제작 시스템을 통합하여 사용자 중심의 혁신적인 교육 환경을 제공했습니다."
-      }
-  ]
+[{"id":"project_001","images":[],"projectName":"동명대학교 스튜디오","year":2021,"description":null},
+{"id":"project_002","images":[],"projectName":"부산외국어대학교 화상회의실","year":2021,"description":null},
+{"id":"project_003","images":[],"projectName":"마산대학교 BLC 강의실","year":2021,"description":null},
+{"id":"project_004","images":[],"projectName":"동아대학교 강의녹화실","year":2021,"description":null},
+{"id":"project_005","images":[],"projectName":"경남대학교 강의실","year":2021,"description":null},
+{"id":"project_006","images":[],"projectName":"경성대학교 이러닝 스튜디오","year":2021,"description":null},
+{"id":"project_007","images":[],"projectName":"경성대학교 1인 스튜디오","year":2021,"description":null},
+{"id":"project_008","images":[],"projectName":"동명대학교 미디어커뮤니케이션학과 스튜디오","year":2021,"description":null},
+{"id":"project_009","images":[],"projectName":"경상대학교 NDI 기반 PBL 강의실","year":2021,"description":null},
+{"id":"project_010","images":[],"projectName":"경상대학교 ON-OFF 하이브리드 강의실","year":2022,"description":null},
+{"id":"project_011","images":[],"projectName":"경상대학교 디지털 트랜스 랩","year":2022,"description":null},
+{"id":"project_012","images":[],"projectName":"경상대학교 공동활용 스튜디오","year":2022,"description":null},
+{"id":"project_013","images":[],"projectName":"경상대학교 공유대학(울산대학교) 원격 화상강의실","year":2022,"description":null},
+{"id":"project_014","images":[],"projectName":"창원대학교 공유대학 플랫폼","year":2022,"description":null},
+{"id":"project_015","images":[],"projectName":"부경대학교 텔레프레즌스 강의실","year":2022,"description":null},
+{"id":"project_016","images":[],"projectName":"USG공유대학 대학별 스튜디오","year":2022,"description":null},
+{"id":"project_017","images":[],"projectName":"마산대학교 대강당 첨단멀티형 영상시스템","year":2022,"description":null},
+{"id":"project_018","images":[],"projectName":"경상대학교 디지털 체험공간","year":2023,"description":null},
+{"id":"project_019","images":[],"projectName":"동명대학교 중앙도서관 대회의실 영상시스템","year":2023,"description":null},
+{"id":"project_020","images":[],"projectName":"대구교육청 대구온라인학교 통합콘트롤시스템","year":2023,"description":null},
+{"id":"project_021","images":[],"projectName":"광주교육청 광주온라인학교 통합콘트롤시스템","year":2023,"description":null},
+{"id":"project_022","images":[],"projectName":"경남청년창업아카데미 스튜디오","year":2023,"description":null},
+{"id":"project_023","images":[],"projectName":"동아대학교 RIS 클린에너지 융합부품소재 사업단 하이플렉스 강의실","year":2024,"description":null},
+{"id":"project_024","images":[],"projectName":"부산대학교 RIS 스마트항만물류사업단 원격 강의실","year":2024,"description":null},
+{"id":"project_025","images":[],"projectName":"한국해양대학교 RIS 스마트항만물류사업단 원격 강의실","year":2024,"description":null},
+{"id":"project_026","images":[],"projectName":"가톨릭센터 공연홀 공개방송시스템","year":2024,"description":null},
+{"id":"project_027","images":[],"projectName":"동아대학교 소프트웨어 혁신센터 코딩 강의실","year":2024,"description":null},
+{"id":"project_028","images":["img/portfolio/028/2025_028_1.webp", "img/portfolio/028/2025_028_2.webp", "img/portfolio/028/2025_028_3.webp"],"projectName":"마산대학교 산학관 시뮬레이션센터","year":2025,"description":"시뮬레이션룸 2개실, 디브리핑룸·BLS룸·세미나실·관제실 각 1개실 구축\nIoT 기반 통합 운영 체계를 갖춘 실습 중심의 첨단 교육환경 조성"},
+{"id":"project_029","images":[],"projectName":"경상국립대학교 자율전공학부 학습공간","year":2025,"description":null},
+{"id":"project_030","images":[],"projectName":"한국승강기대학교 원격강의 스튜디오","year":2025,"description":null}]

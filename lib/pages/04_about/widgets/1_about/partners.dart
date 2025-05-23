@@ -14,18 +14,63 @@ class _PartnersState extends State<Partners> {
   final ScrollController _scrollController = ScrollController();
   bool _showLeftArrow = false;
   bool _showRightArrow = true;
+  Timer? _autoScrollTimer;
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_updateArrowVisibility);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _updateArrowVisibility();
+        _startAutoScroll();
+      }
+    });
   }
 
   @override
   void dispose() {
+    _autoScrollTimer?.cancel();
     _scrollController.removeListener(_updateArrowVisibility);
     _scrollController.dispose();
     super.dispose();
+  }
+
+  void _startAutoScroll() {
+    _autoScrollTimer?.cancel();
+    _autoScrollTimer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      _autoScrollNext();
+    });
+  }
+
+  void _autoScrollNext() {
+    if (!_scrollController.hasClients) return;
+
+    final maxScroll = _scrollController.position.maxScrollExtent;
+    final currentScroll = _scrollController.position.pixels;
+    final itemWidth = getValueForScreenType(
+      context: context,
+      mobile: 120.0,
+      tablet: 180.0,
+      desktop: 240.0,
+    );
+    const itemMargin = 20.0;
+
+    double targetOffset = _scrollController.offset + (itemWidth + itemMargin);
+
+    if (targetOffset >= maxScroll) {
+      _scrollController.animateTo(
+        0.0,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOut,
+      );
+    } else {
+      _scrollController.animateTo(
+        targetOffset,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   void _updateArrowVisibility() {
@@ -39,19 +84,25 @@ class _PartnersState extends State<Partners> {
   }
 
   void _scrollLeft() {
+    _autoScrollTimer?.cancel();
+    if (!_scrollController.hasClients) return;
     _scrollController.animateTo(
       _scrollController.offset - 300,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
+    _startAutoScroll();
   }
 
   void _scrollRight() {
+    _autoScrollTimer?.cancel();
+    if (!_scrollController.hasClients) return;
     _scrollController.animateTo(
       _scrollController.offset + 300,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
+    _startAutoScroll();
   }
 
   @override
@@ -148,12 +199,11 @@ class _PartnersState extends State<Partners> {
   }
 
   Widget _buildCarousel(BuildContext context) {
-    // 임시 파트너사 데이터 (실제 리스트 구성 필요)
     final List<Map<String, String>> partners = List.generate(
-      20,
+      19,
       (index) => {
         'name': 'Partner ${index + 1}',
-        'logo': 'assets/img/placeholder.png',
+        'logo': 'img/partners/${index + 1}.webp',
       },
     );
 
@@ -171,30 +221,33 @@ class _PartnersState extends State<Partners> {
             scrollDirection: Axis.horizontal,
             itemCount: partners.length,
             itemBuilder: (context, index) {
-              return Container(
-                width: getValueForScreenType(
-                  context: context,
-                  mobile: 120,
-                  tablet: 180,
-                  desktop: 240,
-                ),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: Container(
+                  width: getValueForScreenType(
+                    context: context,
+                    mobile: 120,
+                    tablet: 180,
+                    desktop: 240,
+                  ),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 10,
+                        offset: const Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      partners[index]['logo']!,
+                      fit: BoxFit.contain,
                     ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    partners[index]['logo']!,
-                    fit: BoxFit.contain,
                   ),
                 ),
               );

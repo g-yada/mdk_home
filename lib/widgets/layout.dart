@@ -62,10 +62,12 @@ class _SlideInSectionState extends State<SlideInSection>
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 100), () {
-      setState(() {
-        offset = const Offset(0, 0);
-      });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        setState(() {
+          offset = Offset.zero;
+        });
+      }
     });
   }
 

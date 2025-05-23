@@ -167,6 +167,15 @@ class _PortfolioItemsState extends State<PortfolioItems> {
   }
 
   Widget _buildPortfolioCard(BuildContext context, Map<String, dynamic> item) {
+    String displayImage;
+    final imagesList = item['images'];
+
+    if (imagesList != null && imagesList is List && imagesList.isNotEmpty) {
+      displayImage = imagesList[0] as String; // 첫 번째 이미지를 사용합니다.
+    } else {
+      displayImage = 'assets/img/logo_alt.webp'; // 기본 이미지를 사용합니다.
+    }
+
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -185,7 +194,17 @@ class _PortfolioItemsState extends State<PortfolioItems> {
                 child: MouseRegion(
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    child: Image.asset(item['images'][0], fit: BoxFit.cover),
+                    child: Image.asset(
+                      displayImage,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        // 기본 이미지를 여기서 한 번 더 지정하거나, 다른 대체 위젯을 보여줄 수 있습니다.
+                        return Image.asset(
+                          'assets/img/logo_alt.webp',
+                          fit: BoxFit.contain,
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -372,12 +391,20 @@ class _ImageSliderState extends State<_ImageSlider> {
   late PageController _pageController;
   int _currentPage = 0;
   Timer? _timer;
+  List<dynamic> _effectiveImages = [];
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
-    if (widget.images.length > 1) {
+
+    if (widget.images.isEmpty) {
+      _effectiveImages = ['assets/img/logo_alt.webp'];
+    } else {
+      _effectiveImages = widget.images;
+    }
+
+    if (_effectiveImages.length > 1) {
       _startAutoSlide();
     }
   }
@@ -391,7 +418,11 @@ class _ImageSliderState extends State<_ImageSlider> {
 
   void _startAutoSlide() {
     _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      if (_currentPage < widget.images.length - 1) {
+      if (!mounted || !_pageController.hasClients) {
+        timer.cancel();
+        return;
+      }
+      if (_currentPage < _effectiveImages.length - 1) {
         _currentPage++;
       } else {
         _currentPage = 0;
@@ -422,7 +453,7 @@ class _ImageSliderState extends State<_ImageSlider> {
                 _currentPage = index;
               });
             },
-            itemCount: widget.images.length,
+            itemCount: _effectiveImages.length,
             itemBuilder: (context, index) {
               return Container(
                 margin: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -431,7 +462,10 @@ class _ImageSliderState extends State<_ImageSlider> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(widget.images[index], fit: BoxFit.cover),
+                  child: Image.asset(
+                    _effectiveImages[index],
+                    fit: BoxFit.cover,
+                  ),
                 ),
               );
             },
@@ -462,10 +496,12 @@ class _ImageSliderState extends State<_ImageSlider> {
                   child: IconButton(
                     icon: const Icon(Icons.chevron_left),
                     onPressed: () {
+                      _timer?.cancel();
                       _pageController.previousPage(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
+                      _startAutoSlide();
                     },
                     color: PRIMARY_COLOR,
                   ),
@@ -496,10 +532,12 @@ class _ImageSliderState extends State<_ImageSlider> {
                   child: IconButton(
                     icon: const Icon(Icons.chevron_right),
                     onPressed: () {
+                      _timer?.cancel();
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
+                      _startAutoSlide();
                     },
                     color: PRIMARY_COLOR,
                   ),
@@ -514,7 +552,7 @@ class _ImageSliderState extends State<_ImageSlider> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                widget.images.length,
+                _effectiveImages.length,
                 (index) => Container(
                   width: 8,
                   height: 8,

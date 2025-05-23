@@ -36,7 +36,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  '온·오프라인을 연결하는 모임·회의·협업에 특화된 커뮤니케이션 학습공간',
+                  '온·오프라인 소통이 유기적으로 이어지는 하이브리드 협업 환경',
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Paperlogy',
@@ -47,7 +47,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  '그룹별로 화면과 아이디어를 공유하고, 필요에 따라 자유롭게 공간을 재구성할 수 있는 가변형 강의실입니다.\n교수자가 주도하는 일방적 수업에서 벗어나 학습자 간 협력과 토론을 통해 창조적이고 자기주도적인 학습이 가능하도록 지원합니다.',
+                  '온·오프라인 참여자 간의 경계를 최소화하고, 모임·회의·협업에 특화된 상호작용 중심의 학습공간입니다.\n실시간 소통과 아이디어 공유가 원활히 이루어지도록 공간을 설계하고\n첨단 장비와 자동화 시스템을 통합하여 몰입도 높은 협업 경험을 제공합니다.',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Paperlogy',
@@ -57,13 +57,13 @@ class HybridLearningCube extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 32),
-                _buildFeature('모둘형 책상과 의자로 자유로운 그룹 구성'),
+                _buildFeature('대면 및 원격 소통에 최적화 된 공간 구성'),
                 const SizedBox(height: 16),
-                _buildFeature('그룹별 디스플레이로 효율적인 협업 가능'),
+                _buildFeature('올인원 화상회의시스템 지원'),
                 const SizedBox(height: 16),
-                _buildFeature('상호 연동되는 화면 공유 시스템'),
+                _buildFeature('오프라인 화이트보드의 판서 내용을 AI카메라로 온라인 공유'),
                 const SizedBox(height: 16),
-                _buildFeature('IoT 기반 환경 제어로 쾌적한 학습 환경 유지'),
+                _buildFeature('IoT 기반 환경 제어'),
               ],
             ),
           ),
@@ -81,7 +81,7 @@ class HybridLearningCube extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('assets/img/pbl.webp'),
+                  image: AssetImage('img/business/cube.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/pbl.webp'),
+                image: AssetImage('img/business/cube.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -120,7 +120,7 @@ class HybridLearningCube extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'PBL 강의실',
+                '커넥티드 큐브',
                 style: TextStyle(
                   fontSize: 28,
                   fontFamily: 'Paperlogy',
@@ -130,7 +130,7 @@ class HybridLearningCube extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                '문제 기반 학습(Problem Based Learning)을 위한 최적의 강의 공간',
+                '온·오프라인 소통이 유기적으로 이어지는 하이브리드 협업 환경',
                 style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'Paperlogy',
@@ -141,7 +141,7 @@ class HybridLearningCube extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Text(
-                '그룹별로 화면과 아이디어를 공유하고, 필요에 따라 자유롭게 공간을 재구성할 수 있는 가변형 강의실입니다.\n교수자가 주도하는 일방적 수업에서 벗어나 학습자 간 협력과 토론을 통해 창조적이고 자기주도적인 학습이 가능하도록 지원합니다.',
+                '온·오프라인 참여자 간의 경계를 최소화하고, 모임·회의·협업에 특화된 상호작용 중심의 학습공간입니다.\n실시간 소통과 아이디어 공유가 원활히 이루어지도록 공간을 설계하고\n첨단 장비와 자동화 시스템을 통합하여 몰입도 높은 협업 경험을 제공합니다.',
                 style: TextStyle(
                   fontSize: 15,
                   fontFamily: 'Paperlogy',
@@ -151,13 +151,13 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 28),
-              _buildFeature('모둘형 책상과 의자로 자유로운 그룹 구성'),
+              _buildFeature('대면 및 원격 소통에 최적화 된 공간 구성'),
               const SizedBox(height: 14),
-              _buildFeature('그룹별 디스플레이로 효율적인 협업 가능'),
+              _buildFeature('올인원 화상회의시스템 지원'),
               const SizedBox(height: 14),
-              _buildFeature('상호 연동되는 화면 공유 시스템'),
+              _buildFeature('오프라인 화이트보드의 판서 내용을 AI카메라로 온라인 공유'),
               const SizedBox(height: 14),
-              _buildFeature('IoT 기반 환경 제어로 쾌적한 학습 환경 유지'),
+              _buildFeature('IoT 기반 환경 제어'),
             ],
           ),
         ],
@@ -183,7 +183,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('assets/img/pbl.webp'),
+                image: AssetImage('img/business/cube.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -193,7 +193,7 @@ class HybridLearningCube extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'PBL 강의실',
+                '커넥티드 큐브',
                 style: TextStyle(
                   fontSize: 24,
                   fontFamily: 'Paperlogy',
@@ -203,7 +203,7 @@ class HybridLearningCube extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                '문제 기반 학습(Problem Based Learning)을 위한 최적의 강의 공간',
+                '온·오프라인 소통이 유기적으로 이어지는 하이브리드 협업 환경',
                 style: TextStyle(
                   fontSize: 16,
                   fontFamily: 'Paperlogy',
@@ -214,7 +214,7 @@ class HybridLearningCube extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Text(
-                '그룹별로 화면과 아이디어를 공유하고, 필요에 따라 자유롭게 공간을 재구성할 수 있는 가변형 강의실입니다.\n교수자가 주도하는 일방적 수업에서 벗어나 학습자 간 협력과 토론을 통해 창조적이고 자기주도적인 학습이 가능하도록 지원합니다.',
+                '온·오프라인 참여자 간의 경계를 최소화하고, 모임·회의·협업에 특화된 상호작용 중심의 학습공간입니다.\n실시간 소통과 아이디어 공유가 원활히 이루어지도록 공간을 설계하고\n첨단 장비와 자동화 시스템을 통합하여 몰입도 높은 협업 경험을 제공합니다.',
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Paperlogy',
@@ -224,13 +224,13 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              _buildFeature('모둘형 책상과 의자로 자유로운 그룹 구성'),
+              _buildFeature('대면 및 원격 소통에 최적화 된 공간 구성'),
               const SizedBox(height: 12),
-              _buildFeature('그룹별 디스플레이로 효율적인 협업 가능'),
+              _buildFeature('올인원 화상회의시스템 지원'),
               const SizedBox(height: 12),
-              _buildFeature('상호 연동되는 화면 공유 시스템'),
+              _buildFeature('오프라인 화이트보드의 판서 내용을 AI카메라로 온라인 공유'),
               const SizedBox(height: 12),
-              _buildFeature('IoT 기반 환경 제어로 쾌적한 학습 환경 유지'),
+              _buildFeature('IoT 기반 환경 제어'),
             ],
           ),
         ],
