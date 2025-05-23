@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mdk_home/widgets/index.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'breakpoints.dart';
 
 class ContentSection extends StatelessWidget {
   const ContentSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout.builder(
-      breakpoints: ScreenBreakpoints(desktop: 1500, tablet: 1190, watch: 0),
-      mobile: (context) => MobileContents(),
-      tablet: (context) => DesktopContents(),
-      desktop: (context) => DesktopContents(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (Breakpoints.isMobile(context)) {
+          return const MobileContents();
+        } else {
+          return const DesktopContents();
+        }
+      },
     );
   }
 }
@@ -24,7 +27,7 @@ class DesktopContents extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 800,
+          height: Breakpoints.isTablet(context) ? 600 : 800,
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -35,41 +38,56 @@ class DesktopContents extends StatelessWidget {
           ),
         ),
         Container(
-          height: 250,
-          padding: const EdgeInsets.fromLTRB(0, 70, 0, 10),
+          height: Breakpoints.isTablet(context) ? 200 : 250,
+          padding: EdgeInsets.fromLTRB(
+            Breakpoints.getPadding(context),
+            Breakpoints.isTablet(context) ? 50 : 70,
+            Breakpoints.getPadding(context),
+            10,
+          ),
           width: double.infinity,
           decoration: const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.8)),
-          child: SlideInSection(
-            children: [
-              Text(
-                '영상 네트워크 기술을 활용한',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFD4373C),
-                ),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth:
+                    Breakpoints.isTablet(context)
+                        ? Breakpoints.tabletContentWidth
+                        : Breakpoints.desktopContentWidth,
               ),
-              Text(
-                '콘텐츠 제작 공간의 혁신',
-                style: TextStyle(
-                  fontSize: 38,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black.withOpacity(0.3),
-                      offset: const Offset(2, 2),
-                      blurRadius: 4,
+              child: SlideInSection(
+                children: [
+                  Text(
+                    '영상 네트워크 기술을 활용한',
+                    style: TextStyle(
+                      fontSize: Breakpoints.isTablet(context) ? 16 : 18,
+                      fontFamily: 'Paperlogy',
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFD4373C),
                     ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '콘텐츠 제작 공간의 혁신',
+                    style: TextStyle(
+                      fontSize: Breakpoints.isTablet(context) ? 32 : 38,
+                      fontFamily: 'Paperlogy',
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black.withOpacity(0.3),
+                          offset: const Offset(2, 2),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: Breakpoints.isTablet(context) ? 20 : 24),
+                  RedButton(buttonName: '자세히 보기', path: '/business/studio'),
+                ],
               ),
-              SizedBox(height: 24),
-              RedButton(buttonName: '자세히 보기', path: '/business/studio'),
-            ],
+            ),
           ),
         ),
       ],
@@ -85,7 +103,7 @@ class MobileContents extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 500,
+          height: 400,
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -96,41 +114,50 @@ class MobileContents extends StatelessWidget {
           ),
         ),
         Container(
-          height: 500,
+          height: 400,
           width: double.infinity,
+          padding: EdgeInsets.symmetric(
+            horizontal: Breakpoints.getPadding(context),
+          ),
           decoration: const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.7)),
-          alignment: Alignment.center,
-          child: SlideInSection(
-            children: [
-              Text(
-                '영상 네트워크 기술을 활용한',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFD4373C),
-                ),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: Breakpoints.mobileContentWidth,
               ),
-              Text(
-                '콘텐츠 제작 공간의 혁신',
-                style: TextStyle(
-                  fontSize: 38,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black.withOpacity(0.3),
-                      offset: const Offset(2, 2),
-                      blurRadius: 4,
+              child: SlideInSection(
+                children: [
+                  Text(
+                    '영상 네트워크 기술을 활용한',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Paperlogy',
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFD4373C),
                     ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '콘텐츠 제작 공간의 혁신',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontFamily: 'Paperlogy',
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black.withOpacity(0.3),
+                          offset: const Offset(2, 2),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20),
+                  RedButton(buttonName: '자세히 보기', path: '/business/studio'),
+                ],
               ),
-              SizedBox(height: 22),
-              RedButton(buttonName: '자세히 보기', path: '/business/studio'),
-            ],
+            ),
           ),
         ),
       ],

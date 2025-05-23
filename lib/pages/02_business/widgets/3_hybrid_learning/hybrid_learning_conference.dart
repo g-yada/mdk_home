@@ -34,7 +34,7 @@ class HybridLearningConference extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('img/business/conference.webp'),
+                  image: AssetImage('assets/img/business/conference.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class HybridLearningConference extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/conference.webp'),
+                image: AssetImage('assets/img/business/conference.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class HybridLearningConference extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/conference.webp'),
+                image: AssetImage('assets/img/business/conference.webp'),
                 fit: BoxFit.cover,
               ),
             ),

@@ -34,7 +34,7 @@ class HybridLearningTranslab extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('img/business/translab.webp'),
+                  image: AssetImage('assets/img/business/translab.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -112,7 +112,7 @@ class HybridLearningTranslab extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/translab.webp'),
+                image: AssetImage('assets/img/business/translab.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -185,7 +185,7 @@ class HybridLearningTranslab extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/translab.webp'),
+                image: AssetImage('assets/img/business/translab.webp'),
                 fit: BoxFit.cover,
               ),
             ),

@@ -203,7 +203,7 @@ class _PartnersState extends State<Partners> {
       19,
       (index) => {
         'name': 'Partner ${index + 1}',
-        'logo': 'img/partners/${index + 1}.webp',
+        'logo': 'assets/img/partners/${index + 1}.webp',
       },
     );
 

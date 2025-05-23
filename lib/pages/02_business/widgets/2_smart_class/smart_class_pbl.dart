@@ -81,7 +81,7 @@ class SmartClassPbl extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('img/business/pbl.webp'),
+                  image: AssetImage('assets/img/business/pbl.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class SmartClassPbl extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/pbl.webp'),
+                image: AssetImage('assets/img/business/pbl.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class SmartClassPbl extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/pbl.webp'),
+                image: AssetImage('assets/img/business/pbl.webp'),
                 fit: BoxFit.cover,
               ),
             ),

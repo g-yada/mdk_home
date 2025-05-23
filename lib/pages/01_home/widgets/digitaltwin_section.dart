@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mdk_home/widgets/index.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'breakpoints.dart';
 
 class DigitaltwinSection extends StatelessWidget {
   const DigitaltwinSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout.builder(
-      breakpoints: ScreenBreakpoints(desktop: 1600, tablet: 1200, watch: 0),
-      mobile: (context) => MobileDtwin(),
-      tablet: (context) => TabletDtwin(),
-      desktop: (context) => DesktopDtwin(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (Breakpoints.isMobile(context) || Breakpoints.isTablet(context)) {
+          return const TabletMobileDtwin();
+        } else {
+          return const DesktopDtwin();
+        }
+      },
     );
   }
 }
@@ -24,124 +27,75 @@ class DesktopDtwin extends StatelessWidget {
     return Container(
       height: 600,
       width: double.infinity,
-      padding: const EdgeInsets.only(left: 200),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        image: DecorationImage(
-          image: AssetImage('assets/img/digital_twin_s.webp'),
-          fit: BoxFit.fitHeight,
-          scale: 1.5,
-          alignment: Alignment(0.8, 0),
-        ),
-      ),
-      alignment: Alignment.center,
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: SlideInSection(
-          alignment: 'left',
-          children: [
-            Text.rich(
-              TextSpan(
-                text: '디지털 트윈',
-                style: TextStyle(
-                  fontSize: 38,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFD4373C),
+      padding: EdgeInsets.only(left: Breakpoints.getPadding(context)),
+      decoration: const BoxDecoration(color: Colors.white),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: Breakpoints.desktopContentWidth,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: SlideInSection(
+                  alignment: 'left',
+                  children: [
+                    Text.rich(
+                      TextSpan(
+                        text: '디지털 트윈',
+                        style: TextStyle(
+                          fontSize: 38,
+                          fontFamily: 'Paperlogy',
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFFD4373C),
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '\n시뮬레이션 설계',
+                            style: TextStyle(
+                              fontSize: 38,
+                              fontFamily: 'Paperlogy',
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      '가상 물리엔진을 통해 2D 도면을 3D로 현실에 가깝게 구현하여,\n완성된 공간을 제안 단계에서 미리 체험할 수 있습니다.\n공간구성, 기자재 배치, 연결성을 꼼꼼히 사전 테스트하여 최적화된 공간을 제공합니다.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Paperlogy',
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                children: [
-                  TextSpan(
-                    text: '\n시뮬레이션 설계',
-                    style: TextStyle(
-                      fontSize: 38,
-                      fontFamily: 'Paperlogy',
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
+              ),
+              SizedBox(width: 48),
+              Expanded(
+                child: Container(
+                  height: 500,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/digital_twin_s.webp'),
+                      fit: BoxFit.contain,
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-            Text(
-              '가상 물리엔진을 통해 2D 도면을 3D로 현실에 가깝게 구현하여,\n완성된 공간을 제안 단계에서 미리 체험할 수 있습니다.\n공간구성, 기자재 배치, 연결성을 꼼꼼히 사전 테스트하여 최적화된 공간을 제공합니다.',
-              style: TextStyle(
-                fontSize: 16,
-                fontFamily: 'Paperlogy',
-                color: Colors.black,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class TabletDtwin extends StatelessWidget {
-  const TabletDtwin({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 600,
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 60),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        image: DecorationImage(
-          image: AssetImage('assets/img/digital_twin_s.webp'),
-          fit: BoxFit.fitHeight,
-          scale: 1.5,
-          alignment: Alignment(1, 0),
-        ),
-      ),
-      alignment: Alignment.center,
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: SlideInSection(
-          alignment: 'left',
-          children: [
-            Text.rich(
-              TextSpan(
-                text: '디지털 트윈',
-                style: TextStyle(
-                  fontSize: 38,
-                  fontFamily: 'Paperlogy',
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFFD4373C),
-                ),
-                children: [
-                  TextSpan(
-                    text: '\n시뮬레이션 설계',
-                    style: TextStyle(
-                      fontSize: 38,
-                      fontFamily: 'Paperlogy',
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 16),
-            Text(
-              '가상 물리엔진을 통해 2D 도면을 3D로 현실에 가깝게 구현하여,\n완성된 공간을 제안 단계에서 미리 체험할 수 있습니다.\n공간구성, 기자재 배치, 연결성을 꼼꼼히 사전 테스트하여 최적화된 공간을 제공합니다.',
-              style: TextStyle(
-                fontSize: 16,
-                fontFamily: 'Paperlogy',
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class MobileDtwin extends StatelessWidget {
-  const MobileDtwin({super.key});
+class TabletMobileDtwin extends StatelessWidget {
+  const TabletMobileDtwin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -149,9 +103,11 @@ class MobileDtwin extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Container(
-          height: 500,
+          height: 400,
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 32),
+          padding: EdgeInsets.symmetric(
+            horizontal: Breakpoints.getPadding(context),
+          ),
           decoration: const BoxDecoration(
             color: Colors.white,
             image: DecorationImage(
@@ -175,7 +131,7 @@ class MobileDtwin extends StatelessWidget {
               Text(
                 '디지털 트윈',
                 style: TextStyle(
-                  fontSize: 38,
+                  fontSize: 32,
                   fontFamily: 'Paperlogy',
                   fontWeight: FontWeight.w700,
                   color: Color(0xFFD4373C),
@@ -184,7 +140,7 @@ class MobileDtwin extends StatelessWidget {
               Text(
                 '시뮬레이션 설계',
                 style: TextStyle(
-                  fontSize: 38,
+                  fontSize: 32,
                   fontFamily: 'Paperlogy',
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
@@ -192,11 +148,12 @@ class MobileDtwin extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                '가상 물리엔진을 통해 2D 도면을 3D로 현실에 가깝게 구현하여,\n완성된 공간을 제안 단계에서 미리 체험할 수 있습니다.\n공간구성, 기자재 배치, 연결성을 꼼꼼히 사전 테스트하여 최적화된 공간을 제공합니다.',
+                '가상 물리엔진을 통해 2D 도면을 3D로 현실에 가깝게 구현하여,\n완성된 공간을 제안 단계에서 미리 체험할 수 있습니다.\n공간구성, 기자재 배치, 연결성을 꼼꼼히 사전 테스트하여\n최적화된 공간을 제공합니다.',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontFamily: 'Paperlogy',
                   color: Colors.black,
+                  height: 1.8,
                 ),
                 textAlign: TextAlign.center,
               ),

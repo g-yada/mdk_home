@@ -81,7 +81,7 @@ class HybridLearningCube extends StatelessWidget {
                   ),
                 ],
                 image: const DecorationImage(
-                  image: AssetImage('img/business/cube.webp'),
+                  image: AssetImage('assets/img/business/cube.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -110,7 +110,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/cube.webp'),
+                image: AssetImage('assets/img/business/cube.webp'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -183,7 +183,7 @@ class HybridLearningCube extends StatelessWidget {
                 ),
               ],
               image: const DecorationImage(
-                image: AssetImage('img/business/cube.webp'),
+                image: AssetImage('assets/img/business/cube.webp'),
                 fit: BoxFit.cover,
               ),
             ),
